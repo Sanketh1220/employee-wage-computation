@@ -12,12 +12,16 @@ public class EmpWage
 		int wagePartTime = wagePerHour * partTimeHour;
 		Random n = new Random();
 		int ran = n.nextInt(3);
-		if(ran == 2){
-			System.out.println("Employee is Present and wage per day is " + wagePerDay);
-		}else if(ran == 1) {
-			System.out.println("Employee is Present for part time and wage is " + wagePartTime);
-		}else{
-			System.out.println("Employee is Absent");
+		
+		switch(ran){
+			case 2:
+				System.out.println("Employee is Present and wage per day is " + wagePerDay);
+				break;	
+			case 1:
+				System.out.println("Employee is Present for part time and wage is " + wagePartTime);
+				break;
+			case 0:
+				System.out.println("Employee is Absent");
 		}
 	}
 }

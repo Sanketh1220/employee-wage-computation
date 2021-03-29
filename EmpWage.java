@@ -2,19 +2,19 @@ import java.util.*;
 
 public class EmpWage {
 
-      public static final int wagePerHour = 20;
+      //public static final int wagePerHour = 20;
       public static final int partTimeHour = 4;
       public static final int fullDayHour = 8;
-      public static final int totalWorkingDays = 20;
+      //public static final int totalWorkingDays = 20;
 
-      public static int computeWage() {
+      public static int computeWage(String company, int wagePerHour, int totalWorkingDays, int maxWorkingHours ) {
       
-			int wagePerDay = 0;
-      	int wagePartTime = 0;
+			//int wagePerDay = 0;
+      	//int wagePartTime = 0;
       	int workingHours = 0;
       	int workingDays = 0;
 
-      	while ((workingDays < 20) && (workingHours < 100)){
+      	while ((workingDays < totalWorkingDays) && (workingHours < maxWorkingHours)){
          	Random n = new Random();
          	int ran = n.nextInt(3);
          	workingDays++;
@@ -40,11 +40,12 @@ public class EmpWage {
       }
       int totalEmpWage = workingHours * wagePerHour;
 		//System.out.println(workingHours);
-		System.out.println("Total employee wage: " + totalEmpWage);
+		System.out.println("Total employee wage for "+ company + " : " + totalEmpWage);
 		return totalEmpWage;
 	}
 	public static void main(String[] args) {
 		System.out.println("This is employee wage computation");	
-		computeWage();
+		computeWage("Wellsfargo", 20, 18, 80);
+		computeWage("Reliance", 10, 20, 100);
 	}
 }
